@@ -1,0 +1,78 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-typescript/base",
+    "prettier",
+    "plugin:import/recommended",
+    "plugin:github/recommended",
+    "plugin:json/recommended-legacy",
+    "plugin:sonarjs/recommended-legacy"
+    
+  ],
+  "plugins": ["prettier", "import", "github", "sonarjs"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "i18n-text/no-en": "off",
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "@typescript-eslint/no-use-before-define": "off",
+    "filenames/match-regex": "off",
+    "no-console": "off",
+    "github/no-then": "warn",
+    "tailwindcss/no-custom-classname": "off",
+    "import/no-internal-modules": [
+      "error",
+      {
+        "allow": [
+          "@kisaan/common/**",
+          "@/service",
+          "@/api",
+          "@/repository",
+          "@/migrations/**",
+          "@/utils/**",
+          "@/scripts/**",
+          "@/data-source",
+          "@/instrumentations/**"
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["./", "../"],
+            "message": "Relative imports are not allowed."
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*/index.ts", "index.ts", "**/**/index.ts"],
+      "rules": {
+        "import/no-internal-modules": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/ignore": ["node_module"],
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}

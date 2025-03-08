@@ -1,0 +1,50 @@
+{
+  "name": "@dal/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && npm run sentry:sourcemaps",
+    "start:server": "node './build/packages/server/src/index.js'",
+    "watch:build": "tsc-watch --onSuccess \"npm run alias-and-start\"",
+    "alias-and-start": "tsc-alias -p tsconfig.json && nodemon --watch './build' --exec 'node ./build/packages/server/src/index.js' || true",
+    "dev": "npm run watch:build",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "generate:migration": "yarn typeorm migration:generate src/migrations/___RenameMigration___ -d src/migrations/data-source.ts"
+  },
+  "dependencies": {
+    "@dal/common": "1.0.0",
+    "@types/cors": "^2.8.17",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "joi": "^17.13.1",
+    "pg": "^8.12.0",
+    "reflect-metadata": "0.2.1",
+    "tsconfig-paths": "^4.2.0",
+    "typeorm": "0.3.20",
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "20.12.12",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-plugin-github": "^5.0.1",
+    "eslint-plugin-json": "^4.0.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-sonarjs": "^1.0.3",
+    "nodemon": "^2.0.20",
+    "prettier": "^3.3.0",
+    "ts-node": "10.9.2",
+    "tsc-alias": "^1.8.10",
+    "tsc-watch": "^6.2.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.9.3"
+  }
+}

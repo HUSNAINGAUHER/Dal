@@ -1,0 +1,4 @@
+build
+
+__tests__
+src/scripts/uploadSentrySourcemaps.js

@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "lib": ["es5", "es6", "esnext", "dom"],
+    "outDir": "./build",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "stripInternal": true,
+    "pretty": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "downlevelIteration": true,
+    "jsx": "preserve"
+  },
+
+  "exclude": ["node_modules", "build"],
+  "include": ["./**/*.tsx", "./**/*.ts"],
+  "paths": {
+    "@dal/common/*": ["./*"]
+  }
+}

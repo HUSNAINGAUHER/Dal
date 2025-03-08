@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "lib": ["es5", "es6"],
+    "outDir": "./build",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "stripInternal": true,
+    "pretty": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "downlevelIteration": true,
+
+    "paths": {
+      "@dal/common/*": ["../../common/*"],
+      "@/service/*": ["./src/service/*"],
+      "@/config": ["./src/config/index.ts"],
+      "@/service": ["./src/service/index.ts"],
+      "@/repository/*": ["./src/repository/*"],
+      "@/repository": ["./src/repository/index.ts"],
+      "@/api/*": ["./src/api/*"],
+      "@/api": ["./src/api/index.ts"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/utils": ["./src/utils/index.ts"],
+      "@/migrations/*": ["./src/migrations/*"],
+      "@/app": ["./src/app.ts"],
+      "@/data-source": ["./src/data-source.ts"],
+    },
+
+    "inlineSources": true,
+
+    // Set `sourceRoot` to  "/" to strip the build path prefix
+    // from generated source code references.
+    // This improves issue grouping in Sentry.
+    "sourceRoot": "/"
+  }
+}
