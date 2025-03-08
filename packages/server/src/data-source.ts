@@ -24,7 +24,6 @@ export const AppDataSource = new DataSource({
     rejectUnauthorized: true,
     ca: process.env.SSL_CERTIFICATE,
   } : false,
-  migrationsRun: true,
   entities: [Transaction],
   migrations: []
 })
